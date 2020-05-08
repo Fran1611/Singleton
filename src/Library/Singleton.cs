@@ -2,19 +2,21 @@ using System;
 
 namespace Library
 {
-
     public abstract class Singleton<T> where T : class, new() 
-    { 
+    {    
         private static T instance; 
 
-        public static T GetInstance() 
+        public static T Instance
         { 
-            if(instance == null)
+            get
             {
-                instance = new T();
-            } 
-        
-            return instance; 
-        }
-    }
-}   
+                if (instance == null)
+                {
+                    instance = new T();
+                }
+
+                return instance;
+            }
+        } 
+    } 
+}
