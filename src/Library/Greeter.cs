@@ -2,9 +2,9 @@
 
 namespace Library
 {
-    public class Greeter
+    public class Greeter : Singleton<Greeter>
     {
-        private Greeter()
+        public Greeter()
         {
             // Intentionally left blank
         }
@@ -23,7 +23,6 @@ namespace Library
                 return instance;
             }
         }
-
         public void SayHiToTheWorld()
         {
             Console.WriteLine("Hello World!");
